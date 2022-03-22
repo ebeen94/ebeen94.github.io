@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eunbeen Choi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">Home</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">About Me</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Understanding the Ukraine Russia Crisis through Twitter. </h1>
+							<span class="image main"></span>
+                            <ul class="icons">
+                                <li><a href="https://github.com/ebeen94/ukrain_project" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                            </ul>
+							<h2>DATA</h2>
+							<p> 
+								I collected the data from twitter, using the <a href="https://github.com/twintproject/twint">Twint </a> scraper. I crawled data posted from the 16th until the 28th of February 12:00pm(Spain) based on the keyword, ‘UkraineRussia’. After removing duplicate tweets based on the conversation id, date, and tweet content, I conducted an analysis with a total of 287,378 tweets. 
+							</p><br />
+                            <h2>ANALYSIS</h2>
+                            <b>1) Number of Tweets and the Frequency of Interaction </b><br />
+                            The tweets with the keyword ‘UkraineRussia’ started emerging from the 16th of February, as Russia began to escalate its military build-up along the border of Ukraine. On Feb 20th, the official end of Russia-Belarus military drill, the number of tweets related to the keyword of ‘UkraineRussia’ increased twofold. People were curious to find out what Russia’s next action would be following the official end of the military drill. As opposed to ending the military drill, as previously expected, Russia instead increased its troop numbers and changed its force disposition moving from holding areas to potential launch locations, stirring up thousands of new tweets. Then, on Feb 24th, Russia launched its attack on Ukraine, beginning with major explosions in several areas in the east of Ukraine, causing a significant increase in the number of tweets related to ‘UkraineRussia,’ reaching its peak of 170K on the 25th.<br /><br />
+                            Likewise, the frequency of interaction showed a similar trend to the number of tweets. There was the highest number of likes, followed by the number of retweets and then the number of replies. A simple explanation for the significant difference in the numbers can be that majority of the users are passive users - who merely like the tweets. Then there are less-passive users who retweet, and then there are a minority of active users who take the effort to reply to the tweets. The large amount of interaction and tweets during the 24th to 25th obscured the early trend line, so I created a logarithmic scale to spot the changes starting from the 16th. </p>
+						    <center><img src = "images/Dashboard 1.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/app/profile/eunbeen.choi/viz/ukrainerussia_1/Dashboard1?publish=yes"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br />
+                            
+                            <b>2) Languages with Highest Number of Tweets and Interaction</b><br />
+                            Before diving into the analysis, I wanted to check the share of Twitter users from different countries to better understand the data. As of October 2021, the leading countries based on the number of Twitter users were, United States(77.75million), Japan(58.2million), India(24.45million), Brazil(19.05million), United Kingdom(19.05million), Indonesia(17.35million), Turkey(16.25million), South Arabia(14.2million), Mexico(14million), Thailand(11.25million),France(10.2million), Philippines(10.2million), Spain(9.35million), Canada(8million), and Germany(7.8million).<br /><br />
+                                The highest number of tweets were in English throughout all times. Taking into account that majority of the Twitter users are from the United States(77.75million), and that English is an official language in a total of 67 different countries, it is natural that English tweets populate the discourse. The language with the second highest number of tweets was Turkish, followed by Undefined, Hindi, French and German. <br /><br />
+                                The number of tweets in Turkish grew from the day before the outbreak of the war, hitting their peak on the 25th, and plummeting after the 26th. Part of the reason for this trend can be explained by the official Ukrainian request to Turkey on the 24th to close the airspace and the Dardanelles and Bosporus to Russian aircrafts and ships. Turkey’s dependence on Russian gas and other trade may have raised questions about how Turkey may respond if placed under pressure by Vladimir Putin. Any step too far against Moscow, Ankara risks upsetting important Russian energy supplies, trade and tourism, whereas cooperating with Russia may risk drone trades with Ukraine. Perhaps the spike in tweets may be related to Turkish citizens providing their opinions on the matter. <br /><br />
+                                Meanwhile, Hindi tweets sparked up on the 25th, at the outbreak of the war. This corresponds to the time when online efforts to evacuate the Indian nationals from Ukraine started. I assume that people were trying to spread the news and the helpline numbers to help the Indian nationals stranded in Ukraine. Thanks to these efforts, the first Air India flight carrying 219 Indian evacuees from Ukraine flew through the evacuation route from Romania and Hungary and safely landed at the Mumbai airport on the 26th. <br /><br />
+                            <center><img src = "images/Dashboard 2.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/app/profile/eunbeen.choi/viz/ukrainerussia_3/Dashboard13"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br />
+                            
+                            <b>3) Keyword Analysis</b><br />
+                            I separated the English data to further conduct keyword analysis. To clean the text data, I removed the url, punctuations, English stopwords, and tokenized the text with <a href = "  https://www.nltk.org">NLTK tokenizer</a>. Then I extracted the keywords with TFIDF vectorizer, with max features set to 240. The top keyword from the corpus was UkraineRussia(145,470), followed by Ukraine(96,595), Russia(46,752), war(29,476), Putin(28,512), Russian(25,096). <br /><br />
+                            Then I used the <a href="https://nlp.stanford.edu/software/CRF-NER.html">Stanford NER Tagger</a> to identify the most frequently mentioned Names and Entities inside the corpus. As for the person, Zelensky(226), Putin(175), Biden(136), America(106) was mentioned the most(top 10%). As for the organization, Russia(2,625), Ukraine(1,186), China(296), Israel(178), Putin(175), Kiev(162), Biden(136), America(106), and India(95) was the most mentioned(top 10%). I want to mention that the Stanford NER tagger didn’t show a high performance in spotting the Name and Entity inside the corpus. As you can see in the keyword analysis, Ukraine was mentioned 96,595 times but in the Stanford NER tagger, Ukraine was spotted as an organization only 1,186 times. I felt that the quality of the NER tagged keywords was not sufficient to be used for the analysis. <br /><br />
+                            <center><img src = "images/Dashboard 3.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/app/profile/eunbeen.choi/viz/ukrainerussia_4/Dashboard4?publish=yes"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br />
+                            
+                            <b>4) Sentiment Analysis</b><br />
+                            To conduct a sentiment analysis, I employed the Sentiment Intensity Analyzer from <a href="https://github.com/cjhutto/vaderSentiment">Vader</a>. The probability of the sentiment to be negative was 17.7%, neutral 68.3%, and positive 14%. Although it may seem natural for negative sentiment to dominate the tweets, neutral sentiment was strikingly higher than the rest of the sentiments. An explanation could be that most of the tweets collected through the keyword of ‘UkraineRussia’ was largely informative tweets, sharing the current state of affairs online, rather than emotional comments on what is happening.<br /><br />
+                            I also experimented with <a href="https://github.com/Ejhfast/empath-client">Empath</a>, which is a tool for analyzing text across lexical categories (similar to LIWC) to gain better insight into the tweets. The results showed that the most common lexical category was aggression(0.007), air_travel(0.004), achievement(0.002), anger(0.002), affection(0.001). It seemed like a large number of words related to war increased the score for aggression. As for air travel, although I am not sure, it may be related to the discourse related to aircraft and the airways, or the people flying internationally, wondering about potential flight delays and safety. As for achievement, I believe that the two are the result of the lexical categories that frequently appear in the context of war; This is because war has military objectives and timeframes allowing for obvious categorization of successful achievements or unsuccessful achievement. Perhaps the category of anger represents increasing global indignation around the world at the break of peace in Europe. As for affection, I believe that a big volume of tweets sending hopes for Ukraine accounted for this lexical category. Affection could also stand for national pride based on their countries involvement in the conflict. For example, Turkish drones being used to destroy Russian armored vehicles could elicit pride on behalf of the Turkish nationals. However, the overall probability of each lexical categories are very low, with the highest category being 0.007, so the interpretability of all the categories aren’t powerful. <br /><br />
+                            <center><img src = "images/Dashboard 4.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/app/profile/eunbeen.choi/viz/ukrainerussia_2/Dashboard12?publish=yes"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br />
+                            
+                            
+                            </p>
+                        
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                        <div class="inner">
+                            <ul class = "copyright">
+                                <li> Eunbeen Choi</li>
+                                <li> <a href= "index.html"> https://ebeen94.github.io/</a></li>
+                            </ul>
+                        </div>
+
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

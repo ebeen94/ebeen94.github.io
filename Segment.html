@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eunbeen Choi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">Home</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">About Me</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Customer segmentation and retention analysis of online retail data.</h1>
+							<span class="image main"></span>
+                            <ul class="icons">
+                                <li><a href="https://github.com/ebeen94/customer_segment" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                            </ul>
+							<h2>DATA</h2>
+							<p>I used the <a href= ' https://www.kaggle.com/datasets/mathchi/online-retail-ii-data-set-from-ml-repository'>online retail II dataset from ML Repository</a> from Kaggle. The dataset contains the transactions of online retail between 2009 and 2010. The company mainly sells unique all-occasion gift-ware, and the majority of the customers consist of wholesalers. </p>
+							<br /><br />
+							<h2>OVERVIEW</h2>
+							I filtered the data with less than 1 quantity to work with only purchased products (excluding the returned products). Then I looked at the sum of frequency and the purchase price grouped by country, product and year. United Kingdom ranked the first in frequency, followed by EIRE, Germany and France. As for the amount, United Kingdom ranked the first, followed by EIRE, Netherlands and Germany; Although German customers had higher frequency of purchase, higher amount of sales were coming from the Dutch customers. The most frequently bought products were ‘white-hanging heart t-light holder’, followed by 'regency cake stand 3 tier’ and ‘strawberry ceramic trinket box.’  Products with the highest amount of sales were ‘manual’, ‘dotcom postage’ and ‘regency cake stand 3 tier.’ Most of the sales were from 2010, since the data only had one month of data in 2009.
+							<br /><br /><br /><br /><br />
+							<div>
+							<section class="t-tiles">
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_freq_country.png" alt="" />
+									</span>
+								</article>
+								
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_freq_product.png" alt="" />
+									</span>
+								</article>
+								
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_freq_year.png" alt="" />
+									</span>
+								</article>
+	
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_amt_country.png" alt="" />
+									</span>
+								</article>
+								
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_amt_product.png" alt="" />
+									</span>
+								</article>
+									
+								<article class="style5">
+									<span class="image">
+										<img src="images/purch_amt_year.png" alt="" />
+									</span>
+								</article>
+								</section>
+								<div> 
+								<br /><br /><br /><br />
+								<h2>CUSTOMER RETENTION</h2>
+									
+									After getting an overview of the data, I separated the UK dataset since it contained the major market to analyze the customer retention through Repeat Purchase Rate (RPR), Purchase Frequency (PF), and Time Between Purchases(TBP) metrics.
+									<br /><br />
+							<ul>
+								<li>Repeat Purchase Rate (RPR) = Number of customers that bought more than once/ Total number of customers. </li>
+								<li>Purchase Frequency (PF) = Number of orders in the last 365 days/ Number of unique customers over the last 365 days.</li>
+								<li>Time Between Purchases(TBP) = 365 days/ Purchase Frequency.  average number of days a customer takes between making two purchases, when looking at the past 365 days.</li>
+
+							</ul>
+							The Repeat Purchase Rate (RPR) of the UK customers were 97.34% in 2009, and 97.87% in 2010. Compared to the average retention rate in retail industry (63%), the business performed significantly above the average.  
+							The Purchase Frequency (PF), that is, the average number of orders per customer, was 1.93 orders in 2009 and 4.83 orders in 2010. Time Between Purchases(TBP) was 188 days in 2009 and 75 days in 2010.
+							<br /><br />
+							<br />
+							<img src = "images/rate_table.png" style="width:300px;height:200px;">
+							<br /><br /><br /><br />
+							<h2>CUSTOMER SEGMENTATION</h2>
+							To segment the customers, I used the behavioral based approach of using RFM metrics: recency, frequency, and monetization.
+							<br /><br />
+							<ul>
+							<li>Recency: Number of days between max date in the invoice column and the date of the last purchase for each customer.  </li>
+							<li>Frequency: Number of orders for each customer.  </li>
+							<li>Monetization: Sum of purchase price for each customer.  </li>
+						    </ul>
+							I assigned scores to each of the customers based on the quartile they were placed in. As for recency, customers in the lower quartile were assigned higher scores, whereas for frequency and monetization, customers in the upper quartile were assigned higher scores. Then, I drew an elbow graph to find out the best number of segmentations that I can get. I decided to go with 6 clusters, so that each characteristics of the segments are not too broad. 
+							</p><br />
+							<img src = "images/elbow_graph.png" style="width:500px;height:400px;">
+							<br /><br />
+
+							With this number, I employed k-means clustering to segment the customers. You can see the different segments of the customers in the 3d graph below. I named the segments as following:
+							<br /><br />
+
+							<li>High recency, High frequency, High monetization =  MVC: Most Valuable Customers.<br /></li>
+							<li>High recency, High frequency, Mid~Low monetization  = VC: Valuable Customers. <br /></li>
+							<li>High recency, Mid frequency, Low monetization = Newcomers. <br /></li>
+							<li>Mid~Low recency, High frequency, High~Mid monetization = Previous MVC. <br /></li>
+							<li>Mid~Low recency, High~Low frequency, High-Low monetization = Previous VC. <br /></li>
+							<li>Low recency, Low frequency, Low-Mid monetization = Hibernating.
+							
+							<!-- <img src = "images/segment_3d.png" style="width:1200px;height:1200px;">
+							‘VC’ (22.9%) was the biggest segment, closely followed by ‘Previous VC’(21.4%), then ‘Hibernating’(15.6%), ‘Newcomers'(14.6%), ‘MVC’(13.0%), and ‘Previous VC’(12.5%)
+							<br /><br />
+							<img src = "images/segment_piechart.png" style="width:500px;height:400px;"> -->
+
+							<center><img src = "images/segment_3d.png" style="width:1200px;height:1200px;"></center>
+							‘VC’ (22.9%) was the biggest segment, closely followed by ‘Previous VC’(21.4%), then ‘Hibernating’(15.6%), ‘Newcomers'(14.6%), ‘MVC’(13.0%), and ‘Previous VC’(12.5%).
+							<br /><br />
+							<center><img src = "images/segment_piechart.png" style="width:500px;height:400px;"></center>
+
+							</div>
+
+                            </p>
+                        
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                        <div class="inner">
+                            <ul class = "copyright">
+                                <li> Eunbeen Choi</li>
+                                <li> <a href= "index.html"> https://ebeen94.github.io/</a></li>
+                            </ul>
+                        </div>
+
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

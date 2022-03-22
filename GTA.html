@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Eunbeen Choi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="title">Home</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">About Me</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Analyzing the rental properties in the Greater Toronto Area with REATLOR.ca data</h1>
+							<span class="image main"></span>
+                            <ul class="icons">
+                                <li><a href="https://github.com/ebeen94/GTA/tree/main" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                            </ul>
+							<h2>DATA</h2>
+							<p> 
+								I collected the data from REALTOR.ca based on the search of rental properties in the Greater Toronto Area. I crawled the data on 2022/03/11 including the address, bedrooms, bathrooms, area code, monthly rental price, parking spaces, property types and public remarks
+							<br /><br />
+                            	I did an extra labeling job on the collected data since there were many properties that were located in the basement but did not have specific tags. I thought it was important to have this information because living in a full apartment alone is very different from living in a bedroom or a basement of another person’s house. So I labeled the data based on the housing type: 1) bedroom, 2)basement, 3)upper-unit, 4)(whole) apartment by reading public remarks column, which contains a short paragraph of extra information about the house including the housing type, facilities and electricity fees, etc.
+							<br /><br />
+								After that, I removed data with property types of vacant land, parking space, or offices, to only look at living properties. Data without address or duplicates were also removed. Then, I used a total of 501 data for the analysis. 
+							</p>
+							<br /><br />
+							<h2>ANALYSIS</h2>
+							<br /><br />
+
+                            <center><img src = "images/gta_1.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/views/GTA_1_16469647408000/Dashboard1?:language=ko-KR&:display_count=n&:origin=viz_share_link"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br />
+							<br /><br />
+							
+							<center><img src = "images/gta_2.png" style="width:1200px;height:800px;"></center>
+                            <a href="https://public.tableau.com/views/GTA_2_16469647647350/Dashboard12?:language=ko-KR&:display_count=n&:origin=viz_share_link"> <br />
+                            <center>See the interactive version in Tableau</center></a> <br /><br /><br /><br />
+							I drew a map of the Greater Toronto Area with<a href="https://www.sketch.com/"> Sketch</a> to give a bird eye view of the average rental prices in GTA. Darker blue represents lower average monthly rent. Light blue represent higher average monthly rent. The measurements are in Canadian dollars(CAD) <br /><br /><br /><br />
+							<center><img src = "images/gta_map.png" style="width:800px;height:550px;"></center>
+							<br /><br />
+							<br /><br />
+						
+							</p>
+                        
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+                        <div class="inner">
+                            <ul class = "copyright">
+                                <li> Eunbeen Choi</li>
+                                <li> <a href= "index.html"> https://ebeen94.github.io/</a></li>
+                            </ul>
+                        </div>
+
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
