@@ -53,98 +53,10 @@
                             <ul class="icons">
                                 <li><a href="https://github.com/ebeen94/happiness" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
                             </ul>
-							<p>As humans, it is our nature to be in pursuit of happiness. I analyzed the happiness dataset from Gallup World Poll to examine the level of happiness around the world and to identify which variables correlate to  the level of perceived happiness in humans. </p>
-							<h2>DATA</h2>
-							The data comes from the Gallup World Poll and it includes information such as:
-							<ul>
-								<li>Ladder score </li>
-								<li>GDP per capita</li>
-								<li>Healthy life expectancy</li>
-								<li>Social support</li>
-								<li>Freedom to make life choices</li>
-								<li>Generosity</li>
-								<li>Perceptions of corruption</li>
-							</ul>
-							The ladder score refers to participants’ answer to the Cantril ladder question which asks their current position on a ladder with steps numbered from 0 to 10, where the top represents the imagined best possible and the bottom the worst possible life for themselves.
-							Social support, freedom to make life choices, generosity and perceptions of corruption were measured through the national average of the binary responses (0=no, 1=yes) to the following questions respectively:<br />
-							<br />
-							<ul>
-							<li>“If you were in trouble, do you have relatives or friends you can count on to help you whenever you need them, or not?” </li>
-							<li>“Are you satisfied or dissatisfied with your freedom to choose what you do with your life?”  </li>
-							<li>Have you donated money to a charity in the past month?” </li>
-							<li>A. “Is corruption widespread throughout the government or not?” <br />
-								B. “Is corruption widespread within businesses or not?”</li>
-						    </ul>
-							As for Generosity, the residual of regressing the national average to the question on GDP per capita was employed. As for Perceptions of Corruption, answers to question B was used in replace for missing data to question A. <br />
-							</p><br />
-                            <h2>ANALYSIS</h2>
-        
-                            To gain an overall  view of happiness around the world, I mapped the ladder score of different countries on the map, distinguished by color. North America, Australia, New Zealand, and Western Europe exhibit a deep blue color, representing highest levels of happiness, whereas Sub-Sahara and South Asia show the darkest orange color, representing lowest levels of happiness.
-							<center><img src = "images/happy_1.png" style="width:1200px;height:800px;"></center>
-							<a href="https://public.tableau.com/views/Happiness_1_16473046785360/Dashboard1?:language=ko-KR&:display_count=n&:origin=viz_share_link"> <br />
-                            <center>See the interactive version in Tableau</center></a> <br /><br />
-
-                            As for the countries with top 10% ladder scores, Nordic countries topped the ranking: Finland, Denmark, Switzerland, Iceland, Norway,  Netherlands, Sweden showed the highest level of happiness. <br /><br />
-							There was a large difference between the countries with highest and lowest perceived level of happiness. The top 10 countries had average scores above 7, whereas the lowest 10 countries had average scores below 4. The lowest national scores corresponded to Afghanistan, South Sudan, Zimbabwe, Rwanda, Central African Republic,Tanzania, Botswana, Yemen, Malawi, and India.<br /><br />
-                            <center><img src = "images/happy_2.png" style="width:1200px;height:800px;"></center>
-                            <a href="https://public.tableau.com/views/Happiness_2_16473046451660/Dashboard12?:language=ko-KR&:display_count=n&:origin=viz_share_link"> <br />
-                            <center>See the interactive version in Tableau</center></a> <br /><br />
-
-							This makes us wonder, which variables influence people to feel happier than others? To answer this question,  I conducted a Pearson’s correlation test between the Ladder Score and the rest of the variables. I set the alpha level to 0.05.
-							<br /><br />
-
-							<li>Logged GDP per capita showed significant positive correlation with happiness with a correlation coefficient of 0.7753 (p-value:5.98e-32). <br /></li>
-							<li>Social support showed significant positive correlation with happiness with a correlation coefficient of 0.7703 (p-value: 1.17e-30). <br /></li>
-							<li>Healthy life expectancy showed significant positive correlation with happiness with a correlation coefficient of 0.7650 (p-value: 2.60e-31). <br /></li>
-							<li>Freedom to make life choice showed significant positive correlation with happiness with a correlation coefficient of 0.5905 (p-value: 9.34e-16). <br /></li>
-							<li>Perceptions of corruption had a significant negative correlation with happiness with a correlation coefficient of -0.4183.(p-value: 7.42e-08). <br /></li>
-							<li>Surprisingly, generosity did not have any significant correlation with happiness.(p-value:0.39). <br />
 							
-							<br /><br /><br /><br />
-							<section class="t-tiles">
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Logged GDP per capita.png" alt="" />
-								</span>
-							</article>
-							
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Social support.png" alt="" />
-								</span>
-							</article>
-							
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Healthy life expectancy.png" alt="" />
-								</span>
-							</article>
-
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Freedom to make life choices.png" alt="" />
-								</span>
-							</article>
-							
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Perceptions of corruption.png" alt="" />
-								</span>
-							</article>
-								
-							<article class="style5">
-								<span class="image">
-									<img src="images/corr_Generosity.png" alt="" />
-								</span>
-							</article>
-							</section>
-							<div>
-
-
-
-							</div>
-
-                            </p>
+							<center>
+								<div class='tableauPlaceholder' id='viz1664502287315' style='position: relative'><noscript><a href='#'><img alt='World Happiness  ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_16644944108240&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Happiness_16644944108240&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ha&#47;Happiness_16644944108240&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1664502287315');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+							</center>
                         
                         </div>
 					</div>
